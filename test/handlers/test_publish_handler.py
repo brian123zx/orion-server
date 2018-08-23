@@ -79,7 +79,7 @@ class TestPublishHandler(TestCase):
             self.assertEqual(location.longitude, 2.0)
             self.assertEqual(location.address, 'address')
 
-    def test_reportLocation_action_valid_ios(self):
+    def test_cmd_report_location(self):
         mock_data = {
             '_type': 'cmd',
             'action': 'reportLocation',
@@ -92,5 +92,3 @@ class TestPublishHandler(TestCase):
 
             self.assertTrue(resp['success'])
             self.assertEqual(status, 200)
-            self.assertEqual(resp['message'], None)
-            self.assertEqual(resp['data'], {})

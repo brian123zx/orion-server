@@ -25,6 +25,7 @@ class PublishHandler(BaseHandler):
         # Handle with empty 200 response
         if self.data['_type'] == 'cmd' and self.data['action'] == 'reportLocation':
             return self.success(status=200)
+
         if self.data['_type'] != 'location':
             return self.error(status=400, message='Not a location publish.')
 
